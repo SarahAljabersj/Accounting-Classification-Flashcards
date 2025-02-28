@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #2563eb;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.filter-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section h3 {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.filter-button {
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-button.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.filter-button:not(.active) {
+    background-color: #e5e7eb;
+    color: #4b5563;
+}
+
+.filter-button:not(.active):hover {
+    background-color: #d1d5db;
+}
+
+.type-filter-button.active {
+    background-color: #10b981;
+}
+
+.flashcard-container {
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.info-row {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.info-row h3 {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+.info-row p {
+    font-size: 18px;
+}
+
+.card-section-badge {
+    position: absolute;
+    top: 15px;
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.front h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.hint-text {
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.debit-balance {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.credit-balance {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: #d1d5db;
+}
+
+.card-counter {
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.action-button {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 5px;
+    color: white;
+}
+
+.action-button.random {
+    background-color: #2563eb;
+}
+
+.action-button.random:hover {
+    background-color: #1d4ed8;
+}
+
+.action-button.flip {
+    background-color: #10b981;
+}
+
+.action-button.flip:hover {
+    background-color: #059669;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #2563eb;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    color: #6b7280;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .card-counter {
+        order: -1;
+        margin-bottom: 10px;
+    }
+    
+    .nav-button {
+        width: 100%;
+    }
+}
